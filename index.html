@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>QR Code Generator</h1>
+                <p>Create QR codes instantly from any URL</p>
+            </div>
+
+            <div class="content">
+                <div class="input-section">
+                    <label for="urlInput">Enter your URL</label>
+                    <input 
+                        type="text" 
+                        id="urlInput" 
+                        placeholder="https://example.com"
+                        class="url-input"
+                    >
+                    <button class="generate-btn" onclick="generateQRCode()">Generate QR Code</button>
+                </div>
+
+                <div class="qr-section" id="qrSection" style="display: none;">
+                    <div class="qr-container">
+                        <div id="qrcode"></div>
+                    </div>
+                    <div class="button-group">
+                        <button class="download-btn" onclick="downloadQRCode()">
+                            <span>⬇</span> Download QR Code
+                        </button>
+                        <button class="copy-btn" onclick="copyToClipboard()">
+                            <span>📋</span> Copy URL
+                        </button>
+                        <button class="reset-btn" onclick="resetForm()">
+                            <span>🔄</span> Generate Another
+                        </button>
+                    </div>
+                    <div class="url-display" id="urlDisplay"></div>
+                </div>
+
+                <div class="error-message" id="errorMessage" style="display: none;"></div>
+            </div>
+
+            <div class="footer">
+                <p>Fast • Secure • No Installation Required</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
